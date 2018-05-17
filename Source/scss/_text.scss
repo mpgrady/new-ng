@@ -1,0 +1,125 @@
+﻿h1, h2, h3,
+.h1, .h2, .h3 {
+    font-family: $font-family-base;
+    font-weight: $font-weight-base;
+}
+
+p {
+    font-size: $font-size-base;
+    color: $font-color-base;
+    font-family: $font-family-light;
+}
+
+a, a:link, a:visited, .faux-link {
+    color: $linkColor;
+    cursor: pointer;
+
+    &:hover {
+        color: $linkHover;
+    }
+}
+
+.large {
+    font-size: $font-size-lg;
+    line-height: 40px;
+}
+
+.small {
+    font-size: $font-size-sm;
+}
+
+
+h1, .h1 {
+    font-size: $h1-font-size;
+    line-height: 72px;
+
+    @include phone {
+        font-size: $h1-font-size-mob;
+        line-height: 2.5rem;
+    }
+}
+
+h2, .h2 {
+    font-size: $h2-font-size;
+    line-height: 44px;
+    letter-spacing: 1px;
+
+    @include phone {
+        font-size: $h2-font-size-mob;
+        line-height: 2rem;
+    }
+}
+
+h3, .h3 {
+    font-size: $h3-font-size;
+    color: $medGray;
+
+    @include phone {
+        font-size: $h3-font-size-mob;
+    }
+}
+
+
+
+ul, ol {
+    font-size: 1rem;
+}
+
+.section-header {
+    font-size: $font-size-base * 1.6;
+    color: $textBlue;
+    font-family: $font-family-light;
+    letter-spacing: 1px;
+}
+
+.section-label {
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    letter-spacing: 1px;
+}
+
+.hero {
+    color: $white;
+}
+
+.subhead {
+    color: $white;
+    font-family: $font-family-light;
+    letter-spacing: .8px;
+}
+
+.blue {
+    color: $aceBlue;
+}
+
+.red {
+    color: $aceRed;
+}
+
+.lightred {
+    color: $lightRed;
+}
+
+.lightblue {
+    color: $lightBlue;
+}
+
+.white {
+    color: $white;
+}
+
+.black {
+    color: $black;
+}
+
+.gray {
+    color: $medGray;
+}
+
+.textBlue {
+    color: $textBlue;
+}
+
+.lightGray {
+    color: $lightGray;
+}

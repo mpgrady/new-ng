@@ -1,0 +1,21 @@
+﻿@mixin placeholder($color) {
+    .form-control::placeholder {
+        color: $color;
+    }
+
+    .form-control::-webkit-input-placeholder {
+        color: $color;
+    }
+
+    .form-control::-moz-placeholder {
+        color: $color;
+    }
+
+    .form-control:-ms-input-placeholder {
+        color: $color;
+    }
+
+    .form-control:-moz-placeholder {
+        color: $color;
+    }
+}

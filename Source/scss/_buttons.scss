@@ -1,0 +1,30 @@
+﻿.btn { 
+@include border-radius(0px);
+padding:25px;
+min-width:175px;
+text-transform:uppercase;
+letter-spacing:2px;
+font-size: .75rem;
+line-height: $line-height-reset;
+font-family: $font-family-base;
+}
+.btn:hover{text-decoration:none;}
+
+.btn-red {
+    background-color: $aceRed;
+    color: $white;
+}
+
+.btn-red:hover {
+    background-color: $lightRed;
+    color: $white;
+}
+.btn-blue {
+    background-color: $aceBlue;
+    color: $white;
+}
+
+.btn-blue:hover {
+    background-color: $blueHover;
+    color: $white;
+}

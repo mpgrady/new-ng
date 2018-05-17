@@ -1,0 +1,25 @@
+﻿.card-header.row.step-header {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+/*.ng-touched {
+    .ng-invalid:not(form) {
+        @extend .is-invalid
+    }
+}*/
+
+.ng-touched:not(form).ng-invalid {     
+        @extend .is-invalid 
+}
+
+
+
+.section-label .invalid-feedback {
+    display: block;
+}
+
+.invalid-feedback.show {
+    display: block;
+}

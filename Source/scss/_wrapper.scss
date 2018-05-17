@@ -1,0 +1,382 @@
+﻿body {
+    font-size: $font-size-base;
+    color: $font-color-base;
+    font-family: $font-family-light;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
+@media only screen and (min-width: 600px) {
+    .container {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+.body-content {
+    position: relative;
+}
+
+nav.header {
+    background-color: $white;
+    height: 100px;
+
+    .logo {
+        float: left;
+        height: 33px;
+        width: auto;
+    }
+
+    .container, .container > .row {
+        height: 100%;
+    }
+}
+
+footer {
+    padding: 80px 0;
+    background: $aceBlue;
+    color: $white;
+
+    p, a, a:visited {
+        color: $white;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .footer-nav {
+        display: block;
+
+        a:before {
+            content: "|";
+            padding: 0 5px;
+        }
+
+        a:first-child:before {
+            content: "";
+        }
+    }
+
+    .row + .row {
+        padding-top: ($spacer * 3);
+    }
+}
+
+.body-content {
+    background: #fff;
+}
+
+.padded-row {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.ltBlueBkg {
+    background: $lightBlue;
+}
+
+.card-header {
+    &:first-child {
+        @include border-radius(0);
+    }
+
+    background: $aceBlue;
+
+    h5 {
+        font-size: $h2-font-size;
+        color: $lightBlue;
+        font-family: $font-family-ultralight;
+    }
+
+    a, a:visited, a:hover {
+        color: $lightBlue;
+    }
+
+    button {
+        background: none;
+        border: none;
+        color: inherit;
+        letter-spacing: 1px;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+#accordion {
+    .card {
+        h5 button:before {
+            padding: 0 20px 0 0;
+        }
+
+        border: none;
+        @include border-radius(0);
+        border-top: 1px solid $white;
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+
+    .card {
+        $var: 1;
+
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}) h5 button:before {
+                content: "#{$var}";
+                $var: $var + 1;
+                font-family: $font-family-base;
+                color: $white;
+            }
+        }
+    }
+
+    .card .card {
+        h5 {
+            button {
+                .step, .edit-info, .finish {
+                    /*display: none;*/
+                    font-size: 50%;
+                    font-family: $font-family-base;
+                    text-transform: uppercase;
+                }
+
+                &[aria-expanded="true"] {
+                    filter: none;
+                    background: $white;
+                }
+
+                &[aria-expanded="true"] .step {
+                    display: inline-block;
+                    color: $lightGray;
+                    text-transform: none;
+                    font-family: $font-family-light;
+                }
+            }
+
+            button:before {
+                content: "";
+                width: 40px;
+                display: inline-block;
+            }
+        }
+
+        .complete {
+            h5 {
+                button {
+                    &[aria-expanded="false"] .edit-info {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        .complete, .not-complete {
+            h5 {
+                button:before {
+                    content: "\f00c";
+                    font-family: Font Awesome\ 5 Free;
+                    -moz-osx-font-smoothing: grayscale;
+                    -webkit-font-smoothing: antialiased;
+                    display: inline-block;
+                    font-style: normal;
+                    font-variant: normal;
+                    text-rendering: auto;
+                    line-height: 1;
+                    font-weight: 900;
+                    color: $aceBlue;
+                    padding-right: 0;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .not-complete {
+            h5 {
+                button {
+                    &[aria-expanded="false"] .finish {
+                        display: inline-block;
+                        color: $aceRed;
+                    }
+                }
+
+                button:before {
+                    content: "+";
+                    transform: rotate(45deg);
+                    font-size: 2.2rem;
+                    text-align: center;
+                    margin-left: -10px;
+                    margin-right: 10px;
+                    padding-left: 5px;
+                    line-height: 1rem;
+                    color: $aceRed;
+                }
+            }
+        }
+
+        border: 1px solid #ddd;
+        border-top: none;
+    }
+}
+
+.card .card {
+
+    > .card-header {
+        padding: 0;
+        border: none;
+
+        h5 {
+            font-size: $font-size-lg;
+            color: $aceBlue;
+
+            button {
+                border: none;
+                @include border-radius(0);
+                padding: 10px 40px;
+                background: rgb(255,255,255); /* Old browsers */
+                background: -moz-linear-gradient(top, rgba(255,255,255,1) 1%, rgba(255,255,255,1) 23%, rgba(238,238,238,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top, rgba(255,255,255,1) 1%,rgba(255,255,255,1) 23%,rgba(238,238,238,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom, rgba(255,255,255,1) 1%,rgba(255,255,255,1) 23%,rgba(238,238,238,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+            }
+        }
+    }
+}
+
+.card-body {
+    padding: 1.25rem 3rem;
+}
+
+#collapseInformation .card-body, .collapseSection .card-body {
+    padding: 0;
+
+    .card-body {
+        padding: 1.25rem 3rem;
+    }
+}
+
+
+//HOMEPAGE
+.jumbotron + .body-content {
+    margin-top: -70px;
+}
+
+.jumbotron {
+    margin-bottom: 0;
+    background: url("/assets/images/Girl-Tablet-Hero.jpg") no-repeat center center;
+    background-size: cover;
+    padding: $jumbotron-padding ($jumbotron-padding / 2);
+
+    @include media-breakpoint-up(sm) {
+        padding: ($jumbotron-padding * 2) $jumbotron-padding ($jumbotron-padding * 2.5) $jumbotron-padding;
+    }
+}
+
+.dk {
+    display: inline-block;
+}
+
+.mb {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .dk {
+        display: none;
+    }
+
+    .mb {
+        display: inline-block;
+    }
+}
+
+.checklist {
+    padding: 0 30px;
+
+    li {
+        list-style: none;
+        padding: 3px 0;
+    }
+
+    li:before {
+        content: "\f00c";
+        font-family: Font Awesome\ 5 Free;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+        font-weight: 900;
+        color: $aceBlue;
+        padding-right: 10px;
+        margin-left: -26px;
+    }
+}
+
+.topspace {
+    margin-top: 20px;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+
+
+.signinModalFlip {
+    #registerBox {
+        display: none;
+    }
+}
+
+@media (min-width: 576px) {
+    .signinModal {
+        .modal-dialog {
+            max-width: 80%;
+
+            .lt-divider {
+                border-top: 1px dotted $grayBorder;
+                padding-top: 2rem;
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .signinModal {
+        .modal-body {
+            padding: 2rem 3rem;
+        }
+
+        .modal-lg {
+            max-width: 80%;
+
+            .lt-divider {
+                border-top: none;
+                border-left: 1px dotted $grayBorder;
+                padding-top: 0;
+                margin-top: 0;
+                padding-left: 2rem;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}

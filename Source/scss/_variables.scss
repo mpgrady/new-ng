@@ -1,0 +1,65 @@
+﻿//Screen sizes
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin phone {
+    @media (max-width: #{$tablet-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+//Colors
+$aceBlue: #004e91;
+$aceRed: #bf1628;
+$lightRed: #df0b14;
+$lightBlue: #F6FAFD;
+$medBlue: #B5C4D8;
+$white: #ffffff;
+$black: #000000;
+$medGray: #3A3A3A;
+$textBlue: #005596;
+$lightGray: #cccccc;
+$blueHover: #0082C3;
+$grayBorder: #7C7C7C;
+$linkColor: #0082C3;
+$linkHover: #009CD8;
+
+// Fonts
+$font-family-base: 'HelveticaNeueLTStd-Roman', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$font-family-light: 'HelveticaNeueLTStd-Th', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+$font-family-ultralight: 'HelveticaNeueLTStd-UltLt', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+
+$font-size-base: 1.25rem; // Assumes the browser default, typically `16px`
+$font-size-lg: $font-size-base * 1.4;
+$font-size-sm: 80%;
+
+$line-height-reset: 1;
+
+$h1-font-size: $font-size-base * 3;
+$h2-font-size: $font-size-base * 1.8;
+$h3-font-size: $font-size-base * 1.1;
+$h1-font-size-mob: $font-size-base * 2;
+$h2-font-size-mob: $font-size-base * 1.4;
+$h3-font-size-mob: $font-size-base * 1;
+
+
+$font-color-base: $medGray;
+$link-color-base: #005596;
+
+$jumbotron-padding: 4rem;
+
+$tooltip-bg: $medGray !important;
+$tooltip-arrow-color: $tooltip-bg;
+

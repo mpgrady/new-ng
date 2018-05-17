@@ -1,0 +1,19 @@
+﻿$fa-font-path: "/fonts" !default;
+$fa-font-path: "/fonts" ;
+
+@import "../../node_modules/@progress/kendo-theme-bootstrap/scss/all";
+@import "../../node_modules/@fortawesome/fontawesome-free-webfonts/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free-webfonts/scss/fa-regular";
+@import "../../node_modules/@fortawesome/fontawesome-free-webfonts/scss/fa-brands";
+@import "../../node_modules/@fortawesome/fontawesome-free-webfonts/scss/fa-solid";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import "mixins";
+@import "fonts";
+@import "variables";
+@import "text";
+@import "buttons";
+@import "formelements";
+@import "icons"; 
+@import "wrapper";
+@import "_forms";
